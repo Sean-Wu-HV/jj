@@ -1,3 +1,9 @@
+
+pipeline {
+    agent any 
+    environment {
+        ABC = "hi"
+    }
     properties([
       parameters([
         booleanParam(
@@ -14,12 +20,6 @@
          string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
       ])
     ])
-pipeline {
-    agent any 
-    environment {
-        ABC = "hi"
-    }
-
     stages {
         stage ('Clean and build'){
             steps{
