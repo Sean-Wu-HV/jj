@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'ubuntu' }
+    agent any 
     environment {
         ABC = "hi"
     }
