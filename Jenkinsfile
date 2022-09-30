@@ -4,22 +4,20 @@ pipeline {
     environment {
         ABC = "hi"
     }
-    properties([
-      parameters([
+    parameters{
         booleanParam(
           defaultValue: false,
           description: 'isFoo should be false',
           name: 'isFoo'
-        ),
+        )
         booleanParam(
           defaultValue: true,
           description: 'isBar should be true',
           name: 'isBar'
-        ),
-         string(name: 'VERSION_TO_LIST', defaultValue: "9.1"),
-         string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
-      ])
-    ])
+        )
+         string(name: 'VERSION_TO_LIST', defaultValue: "9.1"
+         string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc")
+    }
     stages {
         stage ('Clean and build'){
             steps{
