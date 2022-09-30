@@ -15,8 +15,8 @@ pipeline {
           description: 'isBar should be true',
           name: 'isBar'
         )
-         string(name: 'VERSION_TO_LIST', defaultValue: "9.1")
-         string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc")
+        string(name: 'VERSION_TO_LIST', defaultValue: "9.1")
+        string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc")
     }
     stages {
         stage ('Clean and build'){
@@ -26,10 +26,10 @@ pipeline {
                 sh "ls -la"
                 sh "uname"
                 sh "echo 'heehee'"
-                sh "echo isFoo $isFoo"
-                sh "echo isBar $isBar"
-                sh "echo isBar $VERSION_TO_LIST"
-                sh "echo isBar $ARTIFACTORY_CREDENTIALS"
+                sh "echo isFoo ${params.isFoo}"
+                sh "echo isBar ${params.isBar}"
+                sh "echo isBar ${params.VERSION_TO_LIST}"
+                sh "echo isBar ${params.ARTIFACTORY_CREDENTIALS}"
             }
         }
         stage ('SonarQube analysis'){
