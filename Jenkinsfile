@@ -1,27 +1,25 @@
+    properties([
+      parameters([
+        booleanParam(
+          defaultValue: false,
+          description: 'isFoo should be false',
+          name: 'isFoo'
+        ),
+        booleanParam(
+          defaultValue: true,
+          description: 'isBar should be true',
+          name: 'isBar'
+        ),
+         string(name: 'VERSION_TO_LIST', defaultValue: "9.1"),
+         string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
+      ])
+    ])
 pipeline {
     agent any 
     environment {
         ABC = "hi"
     }
-//     options([
-//       parameters([
-//         booleanParam(
-//           defaultValue: false,
-//           description: 'isFoo should be false',
-//           name: 'isFoo'
-//         ),
-//         booleanParam(
-//           defaultValue: true,
-//           description: 'isBar should be true',
-//           name: 'isBar'
-//         ),
-//          string(name: 'VERSION_TO_LIST', defaultValue: "9.1"),
-//          string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
-//       ])
-//     ])
-    options {
-      string(name: 'VERSION_TO_LIST', defaultValue: "9.1")
-    }
+
     stages {
         stage ('Clean and build'){
             steps{
