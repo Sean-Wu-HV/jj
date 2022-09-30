@@ -10,7 +10,7 @@ pipeline {
                 sh "whoami"
                 sh "ls -la"
                 sh "uname"
-                sh "heehee"
+                sh "echo 'heehee'"
             }
         }
     }
