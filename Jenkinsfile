@@ -6,7 +6,10 @@ pipeline {
     stages {
         stage ('Clean and build'){
             steps{
-                sh "dotnet clean build"
+                sh "pwd"
+                sh "whoami"
+                sh "ls -la'
+                sh "uname"
                 sh "heehee"
             }
         }
