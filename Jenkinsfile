@@ -15,8 +15,8 @@ pipeline {
           description: 'isBar should be true',
           name: 'isBar'
         ),
-          string(name: 'VERSION_TO_LIST', defaultValue: "9.1"),
-          string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
+         string(name: 'VERSION_TO_LIST', defaultValue: "9.1"),
+         string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
       ])
     ])
     stages {
