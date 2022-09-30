@@ -8,7 +8,7 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "whoami"
-                sh "ls -la'
+                sh "ls -la"
                 sh "uname"
                 sh "heehee"
             }
