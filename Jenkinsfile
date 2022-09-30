@@ -15,6 +15,8 @@ pipeline {
           description: 'isBar should be true',
           name: 'isBar'
         ),
+          string(name: 'VERSION_TO_LIST', defaultValue: "9.1"),
+          string(name: 'ARTIFACTORY_CREDENTIALS', defaultValue: "nabc"),
       ])
     ])
     stages {
@@ -27,6 +29,8 @@ pipeline {
                 sh "echo 'heehee'"
                 sh "echo isFoo $isFoo"
                 sh "echo isBar $isBar"
+                sh "echo isBar $VERSION_TO_LIST"
+                sh "echo isBar $ARTIFACTORY_CREDENTIALS"
             }
         }
         stage ('SonarQube analysis'){
