@@ -25,6 +25,8 @@ pipeline {
                 sh "ls -la"
                 sh "uname"
                 sh "echo 'heehee'"
+                sh "echo isFoo $isFoo"
+                sh "echo isBar $isBar"
             }
         }
         stage ('SonarQube analysis'){
