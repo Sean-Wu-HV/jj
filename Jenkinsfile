@@ -13,6 +13,18 @@ pipeline {
                 sh "echo 'heehee'"
             }
         }
+        stage ('SonarQube analysis'){
+            steps{
+                 script{
+                     script{
+                        def scannerHome = tool 'SonarQube Scanner';
+                        withSonarQubeEnv('Sonarqube') {
+                            sh "${tool("SonarQube Scanner")}/bin/sonar-scanner -Dsonar.projectKey=hvs-cli -Dsonar.projectName=hvs-cli"
+                        }
+                     }
+                 }
+            }
+        }
     }
     post
     {
