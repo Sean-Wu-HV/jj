@@ -1,5 +1,5 @@
 pipeline {
-    // agent { label 'windows6'}
+    agent { docker 'ubuntu' }
     environment {
         ABC = "hi"
     }
