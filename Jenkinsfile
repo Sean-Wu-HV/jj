@@ -3,7 +3,7 @@ pipeline {
     environment {
         ABC = "hi"
     }
-    properties([
+    options([
       parameters([
         booleanParam(
           defaultValue: false,
