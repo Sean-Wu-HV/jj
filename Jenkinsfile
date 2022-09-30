@@ -3,6 +3,20 @@ pipeline {
     environment {
         ABC = "hi"
     }
+    properties([
+      parameters([
+        booleanParam(
+          defaultValue: false,
+          description: 'isFoo should be false',
+          name: 'isFoo'
+        ),
+        booleanParam(
+          defaultValue: true,
+          description: 'isBar should be true',
+          name: 'isBar'
+        ),
+      ])
+    ])
     stages {
         stage ('Clean and build'){
             steps{
