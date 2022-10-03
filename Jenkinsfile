@@ -30,6 +30,7 @@ pipeline {
                 sh "echo isBar ${params.isBar}"
                 sh "echo isBar ${params.VERSION_TO_LIST}"
                 sh "echo isBar ${params.ARTIFACTORY_CREDENTIALS}"
+                sh "echo ${env.ABC}"
             }
         }
         stage ('SonarQube analysis'){
