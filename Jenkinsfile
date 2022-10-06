@@ -41,7 +41,7 @@ pipeline {
                        withSonarQubeEnv('sonarqube') {
                            sh "ls -la"
                            sh "echo ${scannerHome}"
-                           sh "${scannerHome}/bin/sonar-scanner"
+                           sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=hvs-cli -Dsonar.projectName=hvs-cli"
                        }
                     }
                 }
