@@ -40,6 +40,7 @@ pipeline {
                        def scannerHome = tool 'SonarQube Scanner';
                        withSonarQubeEnv('sonarqube') {
                            sh "ls -la"
+                           sh "echo ${scannerHome}"
                            sh "${scannerHome}/bin/sonar-scanner"
                            sh "ls -la ${tool("SonarQube Scanner")}"
                        }
