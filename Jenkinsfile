@@ -41,7 +41,7 @@ pipeline {
                        withSonarQubeEnv('sonarqube') {
                            sh "ls -la"
                            sh "echo ${scannerHome}"
-                           sh "ls ${scannerHome}/bin/sonar-scanner"
+                           sh "${scannerHome}/bin/sonar-scanner"
                        }
                     }
                 }
