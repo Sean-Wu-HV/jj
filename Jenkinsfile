@@ -47,6 +47,15 @@ pipeline {
                 }
             }
         }
+        stage('Black Duck Scan') {
+           steps {
+              withCredentials([usernamePassword(credentialsId: 'my_id', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+                sh '''
+                    echo $USERNAME $USERNAME
+                '''
+              }
+           }
+        }
     }
     post
     {
