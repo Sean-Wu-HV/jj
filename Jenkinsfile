@@ -33,20 +33,20 @@ pipeline {
                 sh "echo ${env.ABC}"
             }
         }
-        stage ('SonarQube analysis'){
-            steps{
-                script{
-                    script{
-                       def scannerHome = tool 'SonarQube Scanner';
-                       withSonarQubeEnv('sonarqube') {
-                           sh "ls -la"
-                           sh "echo ${scannerHome}"
-                           sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=hvs-cli -Dsonar.projectName=hvs-cli"
-                       }
-                    }
-                }
-            }
-        }
+//         stage ('SonarQube analysis'){
+//             steps{
+//                 script{
+//                     script{
+//                        def scannerHome = tool 'SonarQube Scanner';
+//                        withSonarQubeEnv('sonarqube') {
+//                            sh "ls -la"
+//                            sh "echo ${scannerHome}"
+//                            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=hvs-cli -Dsonar.projectName=hvs-cli"
+//                        }
+//                     }
+//                 }
+//             }
+//         }
         stage('Black Duck Scan') {
            steps {
               withCredentials([usernamePassword(credentialsId: 'my_id', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
