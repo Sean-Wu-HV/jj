@@ -51,7 +51,7 @@ pipeline {
            steps {
               withCredentials([usernamePassword(credentialsId: 'my_id', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                 sh '''
-                    echo $USERNAME $USERNAME
+                    echo username is: $USERNAME pswrd is: $USERNAME
                 '''
               }
            }
